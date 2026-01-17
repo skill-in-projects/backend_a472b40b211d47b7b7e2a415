@@ -1,6 +1,6 @@
 require_relative '../Models/test_projects'
 
-claqss TestController
+class TestController
     def initialize(db)
         @db = db
     end
@@ -12,6 +12,9 @@ claqss TestController
     end
 
     def get_all
+        # This will raise a ZeroDivisionError
+        result = 1 / 0
+        
         # Set search_path to public schema (required because isolated role has restricted search_path)
         set_search_path
         result = @db.exec('SELECT "Id", "Name" FROM "TestProjects" ORDER BY "Id"')
