@@ -1,6 +1,6 @@
 require_relative '../Models/test_projects'
 
-class TestController
+claqss TestController
     def initialize(db)
         @db = db
     end
